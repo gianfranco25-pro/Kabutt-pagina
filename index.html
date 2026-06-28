@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KABUTT Calzados — Zapatos de cuero, vestir, mocasines y botines para hombre y mujer. Hasta 50% de descuento. Envíos a todo el Perú.">
+  <meta name="keywords" content="zapatos cuero Peru, calzado online, mocasines, botines, zapatos de vestir, KABUTT">
+  <meta property="og:title" content="KABUTT — Calzados de Cuero | Tienda Online Perú">
+  <meta property="og:description" content="Zapatos de cuero, vestir y casual. Hasta 50% OFF. Envíos a todo el Perú.">
+  <meta name="theme-color" content="#111111">
+  <title>KABUTT — Calzados de Cuero y Vestir | Tienda Online Perú</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="css/store.css">
+</head>
+<body>
+
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║  TOPBAR                                              ║
+     ╚══════════════════════════════════════════════════════╝ -->
+<div class="store-topbar" role="banner">
+  <div class="topbar-inner">
+    <span class="topbar-item">
+      <span class="topbar-icon">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </span>
+      Envíos a todo el Perú
+    </span>
+    <span class="topbar-sep"></span>
+    <span class="topbar-item">
+      <span class="topbar-icon">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+      </span>
+      Cambios y devoluciones
+    </span>
+    <span class="topbar-sep"></span>
+    <span class="topbar-item">
+      <span class="topbar-icon">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </span>
+      Pago seguro garantizado
+    </span>
+  </div>
+</div>
+
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║  HEADER                                              ║
+     ╚══════════════════════════════════════════════════════╝ -->
+<header class="store-header" role="navigation" aria-label="Navegación principal">
+  <div class="header-inner">
+
+    <!-- Logo -->
+    <a href="#home" class="store-logo" id="logo-link" aria-label="KABUTT — Ir al inicio">
+      <span class="logo-text">KABUTT</span>
+      <span class="logo-sub">Calzados</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="header-nav" aria-label="Categorías de calzado">
+      <a href="#catalogo?genero=hombre"  class="nav-link" id="nav-hombre">Hombre</a>
+      <a href="#catalogo?genero=mujer"   class="nav-link" id="nav-mujer">Mujer</a>
+      <a href="#catalogo?categoria=mocasin" class="nav-link" id="nav-mocasines">Mocasines</a>
+      <a href="#catalogo?categoria=botin"   class="nav-link" id="nav-botines">Botines</a>
+      <a href="#catalogo?tipo=ofertas"   class="nav-link nav-sale" id="nav-ofertas">
+        Ofertas <span class="sale-tag">SALE</span>
+      </a>
+    </nav>
+
+    <!-- Header Right -->
+    <div class="header-right">
+      <!-- Search -->
+      <button class="icon-btn" id="search-toggle" aria-label="Buscar productos" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+      <!-- Account -->
+      <button class="icon-btn" id="account-btn" aria-label="Mi cuenta">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+        </svg>
+      </button>
+      <!-- Cart -->
+      <button class="icon-btn" id="cart-btn" aria-label="Mi carrito" aria-live="polite">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="cart-count hidden" id="cart-count">0</span>
+      </button>
+      <!-- Hamburger -->
+      <button class="icon-btn hamburger-btn" id="hamburger-btn" aria-label="Abrir menú" aria-controls="mobile-menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Search bar expandible -->
+  <div class="search-bar" id="search-bar" role="search">
+    <div class="search-bar-inner">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input
+        type="search"
+        id="main-search"
+        placeholder="Buscar modelo, tipo o color… presiona Enter"
+        autocomplete="off"
+        aria-label="Buscar productos"
+      >
+      <button class="search-close" id="search-close" aria-label="Cerrar búsqueda">&#x2715;</button>
+    </div>
+  </div>
+</header>
+
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║  MOBILE MENU                                         ║
+     ╚══════════════════════════════════════════════════════╝ -->
+<div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+  <div class="mobile-menu-content">
+    <div class="mobile-menu-hdr">
+      <span class="logo-text">KABUTT</span>
+      <button class="mobile-menu-close" id="mob-close" aria-label="Cerrar menú">&#x2715;</button>
+    </div>
+    <nav class="mobile-nav" aria-label="Navegación móvil">
+      <a href="#catalogo?genero=hombre"    class="mobile-nav-link">Hombre</a>
+      <a href="#catalogo?genero=mujer"     class="mobile-nav-link">Mujer</a>
+      <a href="#catalogo?categoria=mocasin" class="mobile-nav-link">Mocasines</a>
+      <a href="#catalogo?categoria=botin"   class="mobile-nav-link">Botines</a>
+      <a href="#catalogo?categoria=vestir"  class="mobile-nav-link">Zapatos de Vestir</a>
+      <a href="#catalogo?tipo=ofertas"     class="mobile-nav-link mobile-nav-link--sale">
+        Ofertas <span class="sale-tag" style="font-size:8px;">SALE</span>
+      </a>
+      <a href="#catalogo"                  class="mobile-nav-link">Ver todo el catálogo</a>
+    </nav>
+    <div class="mobile-menu-foot">
+      <a href="#" class="mobile-foot-link">Mi cuenta</a>
+      <a href="#carrito" class="mobile-foot-link">Mi carrito</a>
+    </div>
+  </div>
+</div>
+
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║  CONTENIDO PRINCIPAL (SPA)                           ║
+     ╚══════════════════════════════════════════════════════╝ -->
+<main id="page-content" role="main" aria-live="polite">
+  <div style="display:flex;align-items:center;justify-content:center;min-height:60vh;flex-direction:column;gap:16px;background:#fff">
+    <p style="font-size:13px;color:#999;font-family:'Montserrat',sans-serif;letter-spacing:1px">Cargando tienda&#8230;</p>
+  </div>
+</main>
+
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║  FOOTER                                              ║
+     ╚══════════════════════════════════════════════════════╝ -->
+<footer class="store-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text">KABUTT</span>
+        <p>Calzado de cuero de alta calidad para hombre y mujer. Tradición artesanal peruana con diseño contemporáneo desde 2013.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Facebook">Fb</a>
+          <a href="#" aria-label="Instagram">Ig</a>
+          <a href="#" aria-label="TikTok">Tk</a>
+          <a href="#" aria-label="WhatsApp">Wp</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Tienda</h4>
+        <a href="#catalogo?genero=hombre">Hombre</a>
+        <a href="#catalogo?genero=mujer">Mujer</a>
+        <a href="#catalogo?categoria=vestir">Zapatos de Vestir</a>
+        <a href="#catalogo?categoria=mocasin">Mocasines</a>
+        <a href="#catalogo?tipo=ofertas">Ofertas</a>
+      </div>
+      <div class="footer-links">
+        <h4>Ayuda</h4>
+        <a href="#">Cómo comprar</a>
+        <a href="#">Guía de tallas</a>
+        <a href="#">Cambios y devoluciones</a>
+        <a href="#">Métodos de pago</a>
+        <a href="#">Rastrear pedido</a>
+      </div>
+      <div class="footer-links">
+        <h4>Contacto</h4>
+        <a href="tel:+5114990000">(01) 499-0000</a>
+        <a href="mailto:hola@kabutt.pe">hola@kabutt.pe</a>
+        <a href="#">Lima, Perú</a>
+        <a href="#">Lun&#8211;Sáb: 9am &#8211; 8pm</a>
+        <a href="#">Dom: 10am &#8211; 6pm</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; 2026 KABUTT Calzados. Todos los derechos reservados. RUC: 20123456789</p>
+      <div class="pay-badges">
+        <span class="pay-badge">VISA</span>
+        <span class="pay-badge">MC</span>
+        <span class="pay-badge">AMEX</span>
+        <span class="pay-badge">YAPE</span>
+        <span class="pay-badge">PLIN</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/store.js"></script>
+</body>
+</html>
