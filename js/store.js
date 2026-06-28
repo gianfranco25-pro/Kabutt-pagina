@@ -121,6 +121,92 @@ function renderHome() {
   </div>
 </div>
 
+<!-- ═══ CARRUSEL DE CUPONES ═══ -->
+<div class="promo-carousel-section">
+  <div class="promo-carousel-track">
+    <div class="promo-ticket">
+      <span class="pt-pct">50%<small>OFF</small></span>
+      <div class="pt-divider"></div>
+      <div class="pt-info">
+        <strong>Modelos seleccionados</strong>
+        <span>Hasta agotar stock</span>
+      </div>
+    </div>
+    <div class="promo-ticket">
+      <span class="pt-pct">2x1</span>
+      <div class="pt-divider"></div>
+      <div class="pt-info">
+        <strong>Mocasines de cuero</strong>
+        <span>Lleva 2 paga 1</span>
+      </div>
+    </div>
+    <div class="promo-ticket">
+      <span class="pt-pct">30%<small>OFF</small></span>
+      <div class="pt-divider"></div>
+      <div class="pt-info">
+        <strong>Botines temporada</strong>
+        <span>Válido hasta julio</span>
+      </div>
+    </div>
+    <div class="promo-ticket">
+      <span class="pt-pct">S/0</span>
+      <div class="pt-divider"></div>
+      <div class="pt-info">
+        <strong>Envío gratis</strong>
+        <span>Compras desde S/ 150</span>
+      </div>
+    </div>
+    <div class="promo-ticket">
+      <span class="pt-pct">20%<small>OFF</small></span>
+      <div class="pt-divider"></div>
+      <div class="pt-info">
+        <strong>Sandalias de verano</strong>
+        <span>Liquidación final</span>
+      </div>
+    </div>
+    <!-- Duplicados para loop infinito -->
+    <div class="promo-ticket">
+      <span class="pt-pct">50%<small>OFF</small></span>
+      <div class="pt-divider"></div>
+      <div class="pt-info">
+        <strong>Modelos seleccionados</strong>
+        <span>Hasta agotar stock</span>
+      </div>
+    </div>
+    <div class="promo-ticket">
+      <span class="pt-pct">2x1</span>
+      <div class="pt-divider"></div>
+      <div class="pt-info">
+        <strong>Mocasines de cuero</strong>
+        <span>Lleva 2 paga 1</span>
+      </div>
+    </div>
+    <div class="promo-ticket">
+      <span class="pt-pct">30%<small>OFF</small></span>
+      <div class="pt-divider"></div>
+      <div class="pt-info">
+        <strong>Botines temporada</strong>
+        <span>Válido hasta julio</span>
+      </div>
+    </div>
+    <div class="promo-ticket">
+      <span class="pt-pct">S/0</span>
+      <div class="pt-divider"></div>
+      <div class="pt-info">
+        <strong>Envío gratis</strong>
+        <span>Compras desde S/ 150</span>
+      </div>
+    </div>
+    <div class="promo-ticket">
+      <span class="pt-pct">20%<small>OFF</small></span>
+      <div class="pt-divider"></div>
+      <div class="pt-info">
+        <strong>Sandalias de verano</strong>
+        <span>Liquidación final</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ═══ CATEGORÍAS ═══ -->
 <section class="categories-section">

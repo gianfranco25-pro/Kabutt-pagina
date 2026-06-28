@@ -515,128 +515,132 @@ input, select, textarea { font: inherit; }
 .hero-actions {
   display: flex; gap: 12px; flex-wrap: wrap;
 }
-
 /* ============================================================
-   CINTILLO DE PROMOCIÓN (TICKET ELEGANTE)
+   CARRUSEL DE CUPONES (AUTO-SCROLL)
    ============================================================ */
-.promo-strip-section {
+.promo-carousel-section {
   background: var(--c-bg);
   border-bottom: 1px solid var(--c-border);
   padding: var(--sp-md) 0;
+  overflow: hidden;
+  position: relative;
 }
 
-.promo-ticket-strip {
+/* Fade en los bordes */
+.promo-carousel-section::before,
+.promo-carousel-section::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+.promo-carousel-section::before {
+  left: 0;
+  background: linear-gradient(to right, var(--c-bg), transparent);
+}
+.promo-carousel-section::after {
+  right: 0;
+  background: linear-gradient(to left, var(--c-bg), transparent);
+}
+
+.promo-carousel-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: promoScroll 25s linear infinite;
+}
+.promo-carousel-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes promoScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Ticket individual */
+.promo-ticket {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 14px;
   background: var(--c-white);
-  border: 1px dashed #c0c0c0;
-  border-radius: var(--r-md);
-  padding: 16px var(--sp-xl);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-  overflow: visible;
+  border: 1px dashed #c8c8c8;
+  border-radius: 10px;
+  padding: 14px 22px;
+  min-width: 240px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  cursor: pointer;
+  transition: box-shadow var(--t-fast), transform var(--t-fast);
+}
+.promo-ticket:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  transform: translateY(-2px);
 }
 
-/* Perforaciones a los lados */
-.promo-ticket-strip::before {
+/* Perforaciones */
+.promo-ticket::before {
   content: "";
   position: absolute;
-  left: -8px;
-  top: 50%;
+  left: -7px; top: 50%;
   transform: translateY(-50%);
-  width: 14px;
-  height: 14px;
-  background-color: var(--c-bg);
+  width: 12px; height: 12px;
+  background: var(--c-bg);
   border-radius: 50%;
-  border-right: 1px dashed #c0c0c0;
-  z-index: 2;
+  border-right: 1px dashed #c8c8c8;
 }
-
-.promo-ticket-strip::after {
+.promo-ticket::after {
   content: "";
   position: absolute;
-  right: -8px;
-  top: 50%;
+  right: -7px; top: 50%;
   transform: translateY(-50%);
-  width: 14px;
-  height: 14px;
-  background-color: var(--c-bg);
+  width: 12px; height: 12px;
+  background: var(--c-bg);
   border-radius: 50%;
-  border-left: 1px dashed #c0c0c0;
-  z-index: 2;
+  border-left: 1px dashed #c8c8c8;
 }
 
-.pts-left {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-lg);
-}
-
-.pts-pct {
+.pt-pct {
   font-family: var(--ff);
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 800;
   color: var(--c-red);
   line-height: 1;
+  white-space: nowrap;
 }
-
-.pts-divider {
-  width: 1px;
-  height: 28px;
-  background: #e0e0e0;
-}
-
-.pts-txt {
-  font-family: var(--ff);
+.pt-pct small {
   font-size: 11px;
-  color: var(--c-text-3);
-  line-height: 1.4;
+  font-weight: 700;
+  display: block;
+  margin-top: 1px;
 }
 
-.pts-txt strong {
-  color: var(--c-text);
+.pt-divider {
+  width: 1px;
+  height: 30px;
+  background: #e0e0e0;
+  flex-shrink: 0;
+}
+
+.pt-info {
+  font-family: var(--ff);
+  line-height: 1.3;
+}
+.pt-info strong {
   display: block;
+  font-size: 12.5px;
   font-weight: 700;
-  font-size: 14px;
+  color: var(--c-text);
   margin-bottom: 2px;
 }
-
-.pts-btn {
-  font-family: var(--ff);
-  font-size: 11.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--c-text);
-  border-bottom: 1.5px solid var(--c-text);
-  padding-bottom: 1px;
-  letter-spacing: 0.5px;
-  transition: color var(--t-fast), border-color var(--t-fast);
-}
-.pts-btn:hover {
-  color: var(--c-brown);
-  border-color: var(--c-brown);
+.pt-info span {
+  font-size: 10.5px;
+  color: var(--c-text-3);
 }
 
-@media (max-width: 767px) {
-  .promo-ticket-strip {
-    flex-direction: column;
-    gap: var(--sp-md);
-    text-align: center;
-    padding: var(--sp-md);
-  }
-  .pts-left {
-    flex-direction: column;
-    gap: var(--sp-sm);
-  }
-  .pts-divider {
-    width: 40px;
-    height: 1px;
-    background: #e0e0e0;
-  }
-}
-.hb-title { font-size: 11.5px; font-weight: 700; color: var(--c-text); font-family: var(--ff); }
-.hb-sub   { font-size: 10px; color: var(--c-text-3); font-family: var(--ff); }
 
 /* ============================================================
    ENCABEZADOS DE SECCIÓN
