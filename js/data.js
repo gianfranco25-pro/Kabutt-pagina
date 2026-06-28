@@ -20,24 +20,24 @@ const I_MUJER   = 'images/sandal.jpg';
 
 // Aliases por tipo de producto
 const I_OXFORD_BLK  = I_CUERO_H;
-const I_OXFORD_BLK2 = I_CUERO_H;
+const I_OXFORD_BLK2 = I_BOTIN;    // hover: chelsea (distinto)
 const I_DERBY_BRN   = I_CUERO_H;
-const I_DERBY_BRN2  = I_MOCASIN;
+const I_DERBY_BRN2  = I_MOCASIN;  // hover: loafer (distinto)
 const I_LOAFER      = I_MOCASIN;
-const I_LOAFER2     = I_MOCASIN;
+const I_LOAFER2     = I_CUERO_H;  // hover: oxford (distinto)
 const I_CHELSEA_H   = I_BOTIN;
-const I_CHELSEA_H2  = I_BOTIN;
+const I_CHELSEA_H2  = I_CUERO_H;  // hover: oxford (distinto)
 const I_BOTIN_W     = I_MUJER;
-const I_BOTIN_W2    = I_MUJER;
+const I_BOTIN_W2    = I_CASUAL;   // hover: sneaker (distinto)
 const I_SANDAL_W    = I_MUJER;
-const I_SANDAL_W2   = I_MUJER;
+const I_SANDAL_W2   = I_MOCASIN;  // hover: loafer (distinto)
 const I_CASUAL_W    = I_CASUAL;
-const I_CASUAL_B    = I_CASUAL;
+const I_CASUAL_B    = I_MOCASIN;  // hover: loafer (distinto)
 const I_PUMP_W      = I_MUJER;
-const I_FLAT_W      = I_MUJER;
+const I_FLAT_W      = I_BOTIN;    // hover: chelsea (distinto)
 
-// Hero y editorial usan mocasín y oxford respectivamente
-const HERO_IMAGE      = I_MOCASIN;
+// Hero y editorial usan campaña y oxford respectivamente
+const HERO_IMAGE      = 'images/campaign.jpg';
 const EDITORIAL_IMAGE = I_CUERO_H;
 
 // Función IMG ahora es solo un pass-through (ya no usamos Unsplash)

@@ -144,8 +144,28 @@ input, select, textarea { font: inherit; }
   opacity: 0.5;
   display: flex; align-items: center;
 }
+.topbar-promo {
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+.topbar-promo strong {
+  color: #f0c040;
+  font-weight: 800;
+  margin-right: 3px;
+}
+.topbar-promo-cta {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.topbar-promo:hover {
+  color: #fff;
+}
+.topbar-promo:hover .topbar-promo-cta {
+  color: #f0c040;
+}
 @media (max-width: 680px) {
-  .topbar-item:not(:first-child) { display: none; }
+  .topbar-item:not(.topbar-promo) { display: none; }
   .topbar-sep { display: none; }
 }
 
@@ -412,116 +432,209 @@ input, select, textarea { font: inherit; }
    HERO — Estilo comercial tipo Calimod
    ============================================================ */
 .hero-banner {
-  display: grid;
-  grid-template-columns: 1fr;
-  background: var(--c-white);
-  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  min-height: 420px;
   border-bottom: 1px solid var(--c-border);
 }
+
 @media (min-width: 768px) {
   .hero-banner {
-    grid-template-columns: 1fr 1fr;
-    min-height: 460px;
-  }
-}
-@media (min-width: 1100px) {
-  .hero-banner {
-    grid-template-columns: 480px 1fr;
     min-height: 480px;
   }
 }
 
-/* Lado texto (izquierdo) */
-.hero-text-side {
-  display: flex; flex-direction: column; justify-content: center;
-  padding: var(--sp-2xl) var(--sp-lg);
-  background: var(--c-white);
-  position: relative; z-index: 1;
+@media (min-width: 1100px) {
+  .hero-banner {
+    min-height: 520px;
+    height: 580px;
+  }
 }
-@media (min-width: 768px) { .hero-text-side { padding: var(--sp-2xl) var(--sp-xl) var(--sp-2xl) 48px; } }
-@media (min-width: 1100px) { .hero-text-side { padding: var(--sp-2xl) var(--sp-xl) var(--sp-2xl) 56px; } }
+
+.hero-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 768px) { .hero-container { padding: 0 var(--sp-xl); } }
+
+.hero-content {
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: var(--sp-xl);
+  border-radius: var(--r-md);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  z-index: 10;
+}
+@media (max-width: 767px) {
+  .hero-content {
+    margin: var(--sp-md) auto;
+    background: rgba(255, 255, 255, 0.94);
+    padding: var(--sp-lg) var(--sp-md);
+  }
+}
 
 .hero-promo-tag {
   display: inline-block;
   font-family: var(--ff);
-  font-size: 10.5px; font-weight: 700;
-  letter-spacing: 2.5px; text-transform: uppercase;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
   color: var(--c-brown);
-  margin-bottom: 14px;
+  margin-bottom: var(--sp-sm);
   width: fit-content;
 }
 
 .hero-title {
   font-family: var(--ff);
-  font-size: clamp(26px, 3.5vw, 40px);
-  font-weight: 800;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 700;
   color: var(--c-text);
-  line-height: 1.1;
-  margin-bottom: 12px;
+  line-height: 1.25;
+  margin-bottom: var(--sp-md);
   letter-spacing: -0.5px;
 }
 
 .hero-subtitle {
   font-family: var(--ff);
-  font-size: 14px;
-  color: var(--c-text-3);
-  max-width: 360px;
+  font-size: 13.5px;
+  color: var(--c-text-2);
   margin-bottom: var(--sp-lg);
-  line-height: 1.65;
+  line-height: 1.6;
   font-weight: 400;
 }
 
-.hero-promo-block {
-  display: flex; align-items: center; gap: 10px;
-  background: var(--c-red-bg);
-  border: 1px solid rgba(198,40,40,0.15);
-  border-radius: var(--r-sm);
-  padding: 10px 14px;
-  margin-bottom: var(--sp-xl);
-  width: fit-content;
-}
-.hero-promo-pct {
-  font-family: var(--ff);
-  font-size: 26px; font-weight: 900;
-  color: var(--c-red); line-height: 1;
-}
-.hero-promo-txt {
-  font-family: var(--ff);
-  font-size: 12px; color: var(--c-text-2); line-height: 1.45;
-  font-weight: 500;
-}
-.hero-promo-txt strong { color: var(--c-text); display: block; font-weight: 700; font-size: 13px; }
-
 .hero-actions {
-  display: flex; gap: 10px; flex-wrap: wrap;
+  display: flex; gap: 12px; flex-wrap: wrap;
 }
 
-/* Lado imagen (derecho) */
-.hero-img-side {
-  position: relative; overflow: hidden;
+/* ============================================================
+   CINTILLO DE PROMOCIÓN (TICKET ELEGANTE)
+   ============================================================ */
+.promo-strip-section {
   background: var(--c-bg);
-  min-height: 240px;
-}
-@media (max-width: 767px) { .hero-img-side { order: -1; min-height: 220px; } }
-
-.hero-img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  display: block;
+  border-bottom: 1px solid var(--c-border);
+  padding: var(--sp-md) 0;
 }
 
-/* Etiqueta flotante discreta */
-.hero-badge {
-  position: absolute; bottom: 14px; left: 14px;
+.promo-ticket-strip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: var(--c-white);
-  border: 1px solid var(--c-border);
-  border-radius: var(--r-sm);
-  padding: 7px 12px;
-  display: flex; align-items: center; gap: 8px;
-  box-shadow: var(--shadow-card);
+  border: 1px dashed #c0c0c0;
+  border-radius: var(--r-md);
+  padding: 16px var(--sp-xl);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  overflow: visible;
 }
-.hb-text { line-height: 1.3; }
+
+/* Perforaciones a los lados */
+.promo-ticket-strip::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background-color: var(--c-bg);
+  border-radius: 50%;
+  border-right: 1px dashed #c0c0c0;
+  z-index: 2;
+}
+
+.promo-ticket-strip::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background-color: var(--c-bg);
+  border-radius: 50%;
+  border-left: 1px dashed #c0c0c0;
+  z-index: 2;
+}
+
+.pts-left {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-lg);
+}
+
+.pts-pct {
+  font-family: var(--ff);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--c-red);
+  line-height: 1;
+}
+
+.pts-divider {
+  width: 1px;
+  height: 28px;
+  background: #e0e0e0;
+}
+
+.pts-txt {
+  font-family: var(--ff);
+  font-size: 11px;
+  color: var(--c-text-3);
+  line-height: 1.4;
+}
+
+.pts-txt strong {
+  color: var(--c-text);
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.pts-btn {
+  font-family: var(--ff);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--c-text);
+  border-bottom: 1.5px solid var(--c-text);
+  padding-bottom: 1px;
+  letter-spacing: 0.5px;
+  transition: color var(--t-fast), border-color var(--t-fast);
+}
+.pts-btn:hover {
+  color: var(--c-brown);
+  border-color: var(--c-brown);
+}
+
+@media (max-width: 767px) {
+  .promo-ticket-strip {
+    flex-direction: column;
+    gap: var(--sp-md);
+    text-align: center;
+    padding: var(--sp-md);
+  }
+  .pts-left {
+    flex-direction: column;
+    gap: var(--sp-sm);
+  }
+  .pts-divider {
+    width: 40px;
+    height: 1px;
+    background: #e0e0e0;
+  }
+}
 .hb-title { font-size: 11.5px; font-weight: 700; color: var(--c-text); font-family: var(--ff); }
 .hb-sub   { font-size: 10px; color: var(--c-text-3); font-family: var(--ff); }
 
@@ -673,9 +786,26 @@ input, select, textarea { font: inherit; }
 .pc-img {
   width: 100%; height: 100%;
   object-fit: cover; object-position: center;
-  transition: transform 0.35s ease;
+  transition: opacity 0.4s ease, transform 0.5s ease;
 }
-.product-card:hover .pc-img { transform: scale(1.04); }
+.pc-img-main {
+  position: relative;
+  z-index: 1;
+}
+.pc-img-hover {
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 0;
+  opacity: 0;
+}
+.product-card:hover .pc-img-main {
+  opacity: 0;
+  transform: scale(1.03);
+}
+.product-card:hover .pc-img-hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
 
 .pc-badges {
   position: absolute; top: 7px; left: 7px; z-index: 1;
@@ -1394,7 +1524,7 @@ input, select, textarea { font: inherit; }
    RESPONSIVE — Tweaks mobile
    ============================================================ */
 @media (max-width: 599px) {
-  .hero-banner     { min-height: auto; }
+  .hero-banner-inner { min-height: auto; }
   .hero-text-side  { padding: var(--sp-lg) var(--sp-md); }
   .hero-title      { font-size: 24px; }
   .hero-promo-pct  { font-size: 22px; }

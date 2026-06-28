@@ -41,10 +41,12 @@ function svgSearch() {
 // ============================================================
 function renderCard(p) {
   const stock = getStock(p.stock);
+  const hoverImg = (p.images && p.images.length > 1) ? p.images[1] : p.image;
   return `
 <article class="product-card" data-id="${p.id}">
   <div class="pc-img-wrap">
-    <img src="${p.image}" alt="${p.name}" class="pc-img" loading="lazy" onerror="handleImgError(this)">
+    <img src="${p.image}" alt="${p.name}" class="pc-img pc-img-main" loading="lazy" onerror="handleImgError(this)">
+    <img src="${hoverImg}" alt="${p.name} - vista alternativa" class="pc-img pc-img-hover" loading="lazy" onerror="handleImgError(this)">
     <div class="pc-badges">
       ${p.discount > 0 ? `<span class="badge badge-disc">-${p.discount}%</span>` : ''}
       ${p.isNew ? `<span class="badge badge-new">NUEVO</span>` : ''}
@@ -83,29 +85,15 @@ function renderHome() {
 
   return `
 <!-- ═══ HERO COMERCIAL ═══ -->
-<section class="hero-banner" aria-label="Campaña de calzado KABUTT">
-  <div class="hero-text-side">
-    <span class="hero-promo-tag">Nueva Colección 2026</span>
-    <h1 class="hero-title">Zapatos de cuero,<br>mocasines y botines</h1>
-    <p class="hero-subtitle">Calzado de cuero genuino para hombre y mujer. Diseño clásico y contemporáneo fabricado en Perú.</p>
-    <div class="hero-promo-block">
-      <span class="hero-promo-pct">50% OFF</span>
-      <div class="hero-promo-txt">
-        <strong>Descuento en modelos seleccionados</strong>
-        Hasta agotar stock · Temporada de liquidación
-      </div>
-    </div>
-    <div class="hero-actions">
-      <a href="#catalogo" class="btn btn-primary btn-lg">Comprar ahora</a>
-      <a href="#catalogo?tipo=ofertas" class="btn btn-outline btn-lg">Ver ofertas</a>
-    </div>
-  </div>
-  <div class="hero-img-side">
-    <img src="${HERO_IMAGE}" alt="Colección de zapatos de cuero KABUTT 2026" class="hero-img" onerror="handleImgError(this)">
-    <div class="hero-badge">
-      <div class="hb-text">
-        <span class="hb-title">Envío gratis desde S/ 150</span>
-        <span class="hb-sub">A todo el Perú en 2 a 5 días</span>
+<section class="hero-banner" aria-label="Campaña de calzado KABUTT" style="background-image: url('${HERO_IMAGE}')">
+  <div class="hero-container">
+    <div class="hero-content animate-in">
+      <span class="hero-promo-tag">Nueva Colección 2026</span>
+      <h1 class="hero-title">Zapatos de cuero,<br>mocasines y botines</h1>
+      <p class="hero-subtitle">Calzado de cuero genuino para hombre y mujer. Diseño clásico y contemporáneo fabricado en Perú.</p>
+      <div class="hero-actions">
+        <a href="#catalogo" class="btn btn-primary btn-lg">Comprar ahora</a>
+        <a href="#catalogo?tipo=ofertas" class="btn btn-outline btn-lg">Ver ofertas</a>
       </div>
     </div>
   </div>
@@ -132,6 +120,7 @@ function renderHome() {
     </div>
   </div>
 </div>
+
 
 <!-- ═══ CATEGORÍAS ═══ -->
 <section class="categories-section">
